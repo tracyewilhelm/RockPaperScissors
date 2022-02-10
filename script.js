@@ -5,21 +5,15 @@ var answers = ["rock", "paper", "scissors",] //this is the list of variables tha
 
  var play 
 setTimeout(function() {
-  alert("Welcome to the game Rock, Paper, Scissors!") 
-   play = window.confirm("Do you want to play?")
+  alert("Welcome to the game Rock, Paper, Scissors!") //welcome window - alerts the user 'welcome...' - this works
+   play = window.confirm("Do you want to play?") //ok/cancel window to ask if user wants to play - this works
   console.log(play)
 
   gameplay()
 
-}, 2000);
-//welcome window - alerts the user 'welcome...' - this works
+}, 1000);
 
-
-
-//ok/cancel window to ask if user wants to play - this works
-
-
-  
+ 
 // if they chose ok (truthy) run code; if they chose cancel window says 'have a nice day' - THIS BAD
 // how do I get it to go back to play function when they close the 'nice day' window?
 
@@ -31,6 +25,7 @@ var gameplay = function () {
     
 
     Choice = window.prompt("rock, paper, or scissors?"); //prompt asking user to pick r, p, s
+    Choice = Choice.toLowerCase()
     if (answers.includes(Choice)) {
          alert("Good choice!")   
     } else {
@@ -59,8 +54,8 @@ var gameplay = function () {
 
       } else if (Choice == "rock" && randomAnswer == "paper") {
         console.log("You lose")
-        alert("You lose")
-        loss++
+        alert("You win!")
+        win++
         alert("Wins: " + win + "\nLosses: " + loss + "\nTies: " + ties)
         return
 
